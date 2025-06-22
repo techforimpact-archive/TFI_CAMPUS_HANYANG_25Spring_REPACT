@@ -11,7 +11,6 @@ class UserLogin(BaseModel):
     username: str
     password: str
 
-
 class ScoreUpdate(BaseModel):
     username: str
     score: int

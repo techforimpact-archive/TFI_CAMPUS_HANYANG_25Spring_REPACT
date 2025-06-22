@@ -45,8 +45,6 @@ def login(user_login: user_schema.UserLogin, db: Session = Depends(get_db)):
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
-
-#update score의 경우 추후에 확장 가능성을 위해 만들어둠
 @router.post("/update-score")
 def update_score(data: user_schema.ScoreUpdate, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == data.username).first()
@@ -62,3 +60,6 @@ def update_score(data: user_schema.ScoreUpdate, db: Session = Depends(get_db)):
         "username": user.username,
         "total_score": user.total_score
     }
+
+
+

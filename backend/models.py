@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
-from sqlalchemy.dialects.sqlite import JSON
 
 class User(Base):
     __tablename__ = "user"
@@ -12,3 +11,5 @@ class User(Base):
     phone = Column(String, nullable=True)
     email = Column(String, nullable=True)
     total_score = Column(Integer, default=0)
+
+
